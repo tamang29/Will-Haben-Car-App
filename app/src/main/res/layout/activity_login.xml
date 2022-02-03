@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/loginBackground"
+    tools:context=".Activities.LoginActivity">
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/greeting"
+        android:textColor="@color/darkblack"
+        android:textSize="43sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:hint="@string/email"
+        android:layout_marginTop="20dp"
+
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:autofillHints="@string/email"
+        android:textSize="16sp"
+
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:hint="@string/hint_password"
+
+        android:layout_marginTop="15dp"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:autofillHints="@string/hint_password"
+        android:textSize="16sp"
+        />
+    <Button
+        android:id="@+id/requestLogin"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:background="@color/homebutton"
+        android:textColor="@color/white"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp">
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

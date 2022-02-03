@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable-anydpi/login_background.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.3104166666666667" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable-v24/ic_notifications_black_24dp.xml" value="0.37743589743589745" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable-v24/profile_image_foreground.xml" value="0.3768518518518518" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/bottom_nav_foreground.xml" value="0.37743589743589745" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/call_button.xml" value="0.221875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.3104166666666667" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.221875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/ic_menu_item.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/placeholder.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/profile_image.xml" value="0.3768518518518518" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/profile_image_background.xml" value="0.3768518518518518" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/drawable/toast_drawable.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/font/font.xml" value="0.39739583333333334" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout-v28/item_product.xml" value="0.3671875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/activity_login.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/activity_main.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/content_main.xml" value="0.3671875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.3671875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/fragment_filter.xml" value="0.3671875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/fragment_home.xml" value="0.335" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/fragment_item_list.xml" value="0.353125" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/fragment_notifications.xml" value="0.3671875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/fragment_product_list.xml" value="0.375" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/layout/item_product.xml" value="0.375" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3671875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/mipmap-anydpi-v26/profile_image.xml" value="0.221875" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/xml/network_security_config.xml" value="0.1515625" />
+        <entry key="..\:/Users/taman/AndroidStudioProjects/AutoApp/app/src/main/res/xml/preferences.xml" value="0.3671875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.RegisterActivity"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/signup"
+                android:textColor="@color/darkblack"
+                android:textSize="30sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="30dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="30dp"
+                android:textSize="14sp"
+
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_input_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registerName"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:autofillHints="Enter username"
+
+                    android:inputType="text"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:textSize="14sp"
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_input_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registerEmail"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:autofillHints="@string/email"
+
+                    android:layout_gravity="center"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:textSize="14sp"
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_input_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:passwordToggleEnabled="true"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registerPassword"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:autofillHints="@string/hint_password"
+
+                    android:inputType="textPassword"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:textSize="14sp"
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirm_input_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:passwordToggleEnabled="true"
+                >
+
+                <EditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autofillHints="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+
+                    android:textSize="16sp"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                >
+                <TextView
+                    android:text="By clicking Sign Up, you agree to our Terms &amp; Conditions and that you have read our Privacy Policy."
+                    android:id="@+id/termsAndCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textAlignment="center"
+                    />
+
+                <Button
+                    android:id="@+id/signupBtn"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/termsAndCondition"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/darkred"
+                    android:text="Sign up"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/signupBtn"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+
+                    android:gravity="center"
+                    android:text="Registered already? Login Here" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
