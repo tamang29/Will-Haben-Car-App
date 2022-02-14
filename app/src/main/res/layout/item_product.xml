@@ -8,6 +8,7 @@
     >
 
 
+
     <ImageView
         android:id="@+id/model_image"
         android:layout_width="150dp"
@@ -31,7 +32,7 @@
 
     <TextView
         android:id="@+id/model_year"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -44,7 +45,7 @@
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -53,10 +54,11 @@
 
     <TextView
         android:id="@+id/totalMileage"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
+
         app:layout_constraintStart_toEndOf="@+id/model_year"
         app:layout_constraintTop_toBottomOf="@+id/model_name" />
 
@@ -64,9 +66,11 @@
         android:id="@+id/motor_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_marginRight="8dp"
         android:text="TextView"
         android:textColor="@color/customOrange"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/totalMileage" />
 
@@ -76,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:minWidth="70dp"
+
         android:text="TextView"
 
         app:layout_constraintStart_toEndOf="@+id/model_image"
@@ -87,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:minWidth="70dp"
+
         app:layout_constraintStart_toEndOf="@+id/address_one"
         app:layout_constraintTop_toTopOf="@+id/address_one" />
 
@@ -95,9 +99,11 @@
         android:id="@+id/address_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        android:minWidth="70dp"
-        app:layout_constraintStart_toEndOf="@+id/address_two"
+        app:layout_constraintStart_toEndOf="@+id/model_image"
         app:layout_constraintTop_toTopOf="@+id/address_one" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -105,13 +111,13 @@
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/call_button"
+        android:drawableStart="@drawable/ic_baseline_call_24"
+        android:padding="18dp"
         android:text="Call"
         android:textColor="@color/white"
         android:textSize="10sp"
-        android:padding="18dp"
-        android:drawableStart="@drawable/ic_baseline_call_24"
         app:layout_constraintStart_toEndOf="@+id/model_image"
         app:layout_constraintTop_toBottomOf="@+id/address_one" />
 

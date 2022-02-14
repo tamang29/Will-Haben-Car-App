@@ -65,7 +65,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         String addressTwo = item.getAddress2() + ",";
         String addressThree = item.getAddress3();
         String phoneNumber = item.getPhoneNo();
-        //String phoneNumber = "Batman origins";
+
 
 
 
@@ -164,6 +164,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         TextView addressTwo;
         TextView addressThree;
         Button callPerson;
+        TextView notificationCounter;
 
 
 

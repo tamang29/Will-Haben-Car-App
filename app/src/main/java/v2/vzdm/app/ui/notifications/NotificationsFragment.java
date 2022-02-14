@@ -19,15 +19,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import v2.vzdm.app.Models.Item;
 import v2.vzdm.app.Models.NotificationCount;
 import v2.vzdm.app.R;
+import v2.vzdm.app.Utils.Functions;
 import v2.vzdm.app.Utils.Session;
 import v2.vzdm.app.Webservices.ApiInterface;
 import v2.vzdm.app.Webservices.ServiceGenerator;
+import v2.vzdm.app.ui.filter.FilterFragment;
 import v2.vzdm.app.ui.home.HomeAdapter;
 
 import java.util.ArrayList;
@@ -80,15 +83,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 
         notification = view.findViewById(R.id.notification_home);
         notification.setOnClickListener(this);
-        final Handler refreshHandler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                updateNotification();
-                refreshHandler.postDelayed(this,  30*1000);
-            }
-        };
-        refreshHandler.postDelayed(runnable,  30*1000);
+
 
         showProgessBar(true);
 
@@ -99,27 +94,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
     }
 
 
-    private void updateNotification(){
-        ApiInterface apiInterface = ServiceGenerator.createService(ApiInterface.class);
-        Call<NotificationCount> call = apiInterface.getNotificationCount();
-        call.enqueue(new Callback<NotificationCount>() {
-            @Override
-            public void onResponse(Call<NotificationCount> call, Response<NotificationCount> response) {
-                if(response.isSuccessful()){
-                    notificationCounter.setText(response.body().getNotificationCount());
-                    Log.d(TAG,"notification:"+response.body().getNotificationCount());
-                    //notification on insertion
 
-                }
-            }
-
-            @Override
-            public void onFailure(Call<NotificationCount> call, Throwable t) {
-                Log.d(TAG, "Fail");
-                Toast.makeText(getContext(),"Failed",Toast.LENGTH_LONG).show();
-            }
-        });
-    }
 
 
     private void getNotificationProducts() {
@@ -136,8 +111,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 //                        Log.d(TAG,"empty");
 //                    }
 
-                    Toast.makeText(getContext(),"Successful",Toast.LENGTH_LONG).show();
-
                     try {
                         assert response.body() != null;
                         automobile.addAll(response.body());
@@ -152,7 +125,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
                 }
                 else{
                     Log.d(TAG, "Fail" + response.message());
-                    Toast.makeText(getContext(),"Failed",Toast.LENGTH_LONG).show();
+
                 }
                 showProgessBar(false);
             }
@@ -179,6 +152,36 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.profile_image:
+                Fragment filterFragment = new FilterFragment();
+                // consider using Java coding conventions (upper first char class names!!!)
+                FragmentTransaction filterTransaction = getFragmentManager().beginTransaction();
 
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack
+                filterTransaction.replace(R.id.nav_host_fragment, filterFragment);
+                filterTransaction.addToBackStack(null);
+
+                // Commit the transaction
+                filterTransaction.commit();
+                break;
+
+
+            case R.id.notification_home:
+                Fragment notificationsFragment = new NotificationsFragment();
+                // consider using Java coding conventions (upper first char class names!!!)
+                FragmentTransaction notificationTransaction = getFragmentManager().beginTransaction();
+
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack
+                notificationTransaction.replace(R.id.nav_host_fragment, notificationsFragment);
+                notificationTransaction.addToBackStack(null);
+
+                // Commit the transaction
+                notificationTransaction.commit();
+                break;
+
+        }
     }
 }

@@ -28,6 +28,7 @@ import v2.vzdm.app.Models.Item;
 import v2.vzdm.app.Models.ItemList;
 import v2.vzdm.app.Models.NotificationCount;
 import v2.vzdm.app.R;
+import v2.vzdm.app.Utils.Functions;
 import v2.vzdm.app.Utils.Session;
 import v2.vzdm.app.Webservices.ApiInterface;
 import v2.vzdm.app.Webservices.ServiceGenerator;
@@ -87,16 +88,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         notificationCounter = view.findViewById(R.id.notification_counter);
 
         session = new Session(view.getContext());
-        if(session.getnotificationCount()!=null){
-            notificationCounter.setText(session.getnotificationCount());
-        }
+
 
 
         final Handler refreshHandler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                updateNotification();
+                Functions.updateNotification(view.getContext(),notificationCounter,view,getActivity());
+
+                if(session.getnotificationCount()!=null){
+                    if(Integer.parseInt(session.getnotificationCount()) > 9)
+                        notificationCounter.setText("9+");
+                    else
+                        notificationCounter.setText(session.getnotificationCount());
+                }
+
+
                 refreshHandler.postDelayed(this,  10*1000);
             }
         };
@@ -109,55 +117,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
     }
-    private void updateNotification(){
-        ApiInterface apiInterface = ServiceGenerator.createService(ApiInterface.class);
-        Call<NotificationCount> call = apiInterface.getNotificationCount();
-        call.enqueue(new Callback<NotificationCount>() {
-            @Override
-            public void onResponse(Call<NotificationCount> call, Response<NotificationCount> response) {
-                if(response.isSuccessful()){
-                    showNotification();
-                    if(getContext()!=null) {
-                        notificationCounter.setText(response.body().getNotificationCount());
-                        session = new Session(getContext());
-                        session.setNotificationCount(response.body().getNotificationCount());
-                    }
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<NotificationCount> call, Throwable t) {
-                Log.d(TAG, "Fail");
-                Toast.makeText(getContext(),"Failed",Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-    private void showNotification(){
-        if(getActivity()!=null) {
-            NotificationManager mNotificationManager =
-                    (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                NotificationChannel channel = new NotificationChannel("YOUR_CHANNEL_ID",
-                        "VZDM App",
-                        NotificationManager.IMPORTANCE_DEFAULT);
-                channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DESCRIPTION");
-                mNotificationManager.createNotificationChannel(channel);
-            }
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getContext(), "YOUR_CHANNEL_ID")
-                    .setSmallIcon(R.drawable.call_button)
-                    .setContentTitle("VZDM App")
-                    .setContentText("New Car Available")
-                    .setAutoCancel(true);
-            Intent intent = new Intent(getContext(), HomeFragment.class);
-            PendingIntent pi = PendingIntent.getActivity(getContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-            mBuilder.setContentIntent(pi);
-            mNotificationManager.notify(0, mBuilder.build());
-        }
-    }
-
-
 
     public void getProducts(){
         ApiInterface apiInterface = ServiceGenerator.createService(ApiInterface.class);
@@ -182,7 +141,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 }
                 else{
                     Log.d(TAG, "Fail" + response.message());
-                    Toast.makeText(getContext(),"Failed",Toast.LENGTH_LONG).show();
+
                 }
                 showProgessBar(false);
             }

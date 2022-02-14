@@ -53,7 +53,7 @@ public class FilterFragment extends PreferenceFragmentCompat {
 
                     @Override
                     public void onFailure(Call<SwitchAPI> call, Throwable t) {
-                        Toast.makeText(getContext(),"Failed",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(),"Failed",Toast.LENGTH_SHORT).show();
                     }
                 });
                 }
